@@ -23,7 +23,7 @@ Phân tích dữ liệu phức tạp hơn do độ phân giải cao, dễ dẫn 
 Ly giải tế bào -> Phân lập RNA -> Phiên mã ngược -> Khếch đại phiên mã ngược -> Giải trình tự -> Phân tích kết quả
 
 3. Các bước cơ bản trong phân tích dữ liệu scRNA-seq
-Dataset: https://github.com/chanzuckerberg/scRNA-python-workshop/blob/master/content/data.zip
+Dataset: sử dụng dataset pbmc10k_multiome (các tế bào đơn lẻ từ mẫu Peripheral Blood Mononuclear Cells) trong thư viện 
 - Phân tích dữ liệu scRNAseq với “Expression matrix”. Trong Expression matrix, mỗi hàng biểu diễn một gene và mỗi cột biểu diễn một tế bào. Như vậy, mỗi ô biểu diễn mức độ biểu hiện của một gene trong một tế bào. Các bước xây dựng một “Expression matrix” bao gồm:
 Bước 1: Read QC (Quality Control): Đọc và kiểm tra chất lượng đoạn giải trình tự. (Công cụ: FastQC hay Karen)
 Bước 2: Alignment: Liên kết đoạn giải trình tự với hệ genome tham khảo (reference genome) để tìm gene tương ứng với đoạn giải trình tự. (Công cụ sử dụng: STAR, TopHat)

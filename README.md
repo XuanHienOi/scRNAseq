@@ -34,3 +34,14 @@ Bước 4: Reads Quantification: Tính toán mức độ biểu hiện của m�
 4. Thách thức khi dùng phương pháp scRNA-seq
 - Sự nhân lên thiếu đồng đều của cDNA (Bias amplification)
 - Gene “bị loại bỏ” (Gene dropout) là trường hợp gene biểu hiện ở mức độ trung bình hoặc yếu trong một tế bào, nhưng không xuất hiện trong tế bào khác.
+
+5. Kết quả cuối cùng cần đạt được sau khi phân tích trong bài code này
+- Thông tin về sự biểu hiện gen
+- Tương quan giữa các tế bào
+- Phân cụm tế bào và/hoặc sự biểu hiện gen khác biệt giữa các nhóm tế bào.
+Biểu đồ PCA (Phân tích thành phần chính): Biểu đồ này hiển thị sự biến đổi và phân tách của các tế bào dựa trên thành phần chính. Nó giúp bạn hiểu sự tương quan và sự khác biệt giữa các tế bào trong dữ liệu.
+Biểu đồ t-SNE (t-Distributed Stochastic Neighbor Embedding): Biểu đồ t-SNE biểu diễn sự tương quan và sự tách biệt giữa các tế bào trong không gian hai chiều. Nó giúp bạn phát hiện các nhóm tế bào tương tự và những tế bào đơn độc đặc biệt.
+Phân cụm tế bào: Kết quả phân tích scRNA-Seq thường bao gồm việc phân cụm các tế bào vào các nhóm dựa trên sự tương đồng trong biểu hiện gen. Kết quả này cho phép bạn xác định các loại tế bào khác nhau trong dữ liệu và tìm hiểu về sự phân bố và tương quan giữa chúng.
+
+Code:
+- Preprocessing and visualization.ipynb

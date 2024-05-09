@@ -1,3 +1,37 @@
+**Introduction**
+Pre-mRNA is synthesized from a DNA template in the cell nucleus by transcription.Pre-mRNA includes both exon and intron.
+Introns are nucleotide sequences in DNA and RNA that do not directly code for proteins, and are removed during the precursor messenger RNA (pre-mRNA) stage of maturation of mRNA by RNA splicing.
+1. Difference between Bulk RNA-seq and scRNAseq
+Bulk RNA-seq:
+- Goal: Obtain average gene expression profile from a population of cells
+- Protocols: RNA is extracted from a pool of cells. RNA mixture is converted into cDNA. Sequencing is performed on the cDNA.
+- QC: Focuses on RNA extraction and library preparation steps, ensuring high-quality input material with minimal degradation or contamination.
+- Analyses: Comparisons of gene expression between conditions or time points. Identification of differentially expressed genes. Focuses on population-level changes.
+- It's easier to manipulate and analyse but ignore the variation of cells.
+scRNAseq:
+- Goal: Analyze gene expression at the individual cell level to identify cell types and explore cellular heterogeneity.
+- Protocols: Individual cells are isolated using techniques such as microfluidics or droplet-based methods. Each cell's RNA is captured and converted into cDNA, followed by separate sequencing for each cell.
+- QC: Evaluation of technical aspects like the number of genes detected per cell and the number of unique molecular identifiers (UMIs) captured.
+- Analyses: Characterization of cell-specific gene expression profiles. Inference of cell trajectories. Exploration of gene regulatory networks. Captures cellular heterogeneity and dynamics within a population.
+- More expensive and more difficult than bulk RNA-seq
+
+2. Steps of experiments:
+Cell lysis -> RNA isolation -> Reverse transcription -> Reverse transcription amplification -> Sequencing -> Result analysis.
+
+3. Fundamental steps of scRNA-seq data analysis
+Step 1: Read QC (Quality Control)
+Step 2: Alignment
+Step 3: Mapping Quality control
+Step 4: Reads Quantification
+My example below use scanpy to show basic knowledge that I understand about scRNAseq
+
+5. Challenge in scRNAseq
+- Bias amplification: Uneven cDNA amplification
+- Gene dropout: Gene dropout refers to the situation where a gene is expressed at moderate or weak levels in one cell but is absent in another cell.
+
+Code:
+- Preprocessing and visualization.ipynb
+
 **Giới thiệu chung **
 
 DNA sau khi phiên mã sẽ tạo ra Pre-mRNA chứa cả exon bao gồm cả exon (những phần RNA mang thông tin mã hoá amino acid để tổng hợp protein) 
@@ -45,3 +79,4 @@ Phân cụm tế bào: Kết quả phân tích scRNA-Seq thường bao gồm vi�
 
 Code:
 - Preprocessing and visualization.ipynb
+

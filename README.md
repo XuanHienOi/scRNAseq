@@ -36,13 +36,22 @@ Step 4: Reads Quantification
 
 6. General knowledge about PCA algorithm
 PCA (Principle Component Analysis) is is a dimensionality reduction and machine learning method used to simplify a large data set into a smaller set while still maintaining significant patterns and trends.
+
 Step 1: Standardization 
 This step is to standardize the range of continuous initial variables so that each of them contributes equally to the analysis.
-z = (value - mean)/standard deviation
+z = (value - mean)/standard deviation 
+
 Step 2: Compute the covariance matrix to identify correlations
 The aim is to understand how the variables of the input data set are varying from the mean with respect to each other and then we can see any relationship between them.
 So, in order to identify these correlations, we compute the covariance matrix.
 ![alt text](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/national/Principal%2520Component%2520Analysis%2520Covariance%2520Matrix.png)
+
+
+| Variable | x | y | z |
+|---|---|---|---|
+| x | Var(x) | Cov(x, y) | Cov(x, z) |
+| y | Cov(y, x) | Var(y) | Cov(y, z) |
+| z | Cov(z, x) | Cov(z, y) | Var(z) |
 
 Step 3: Compute the eigenvectors and eigenvalues of the covariance matrix to identify the principal components
 Step 4: Create a feature vector to decide which principal components to keep

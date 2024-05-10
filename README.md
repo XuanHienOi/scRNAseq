@@ -1,7 +1,7 @@
 **Introduction**
 Pre-mRNA is synthesized from a DNA template in the cell nucleus by transcription.Pre-mRNA includes both exon and intron.
 Introns are nucleotide sequences in DNA and RNA that do not directly code for proteins, and are removed during the precursor messenger RNA (pre-mRNA) stage of maturation of mRNA by RNA splicing.
-1. Difference between Bulk RNA-seq and scRNAseq
+1. ###Difference between Bulk RNA-seq and scRNAseq
 Bulk RNA-seq:
 - Goal: Obtain average gene expression profile from a population of cells
 - Protocols: RNA is extracted from a pool of cells. RNA mixture is converted into cDNA. Sequencing is performed on the cDNA.

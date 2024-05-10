@@ -1,7 +1,8 @@
 **Introduction**
+
 Pre-mRNA is synthesized from a DNA template in the cell nucleus by transcription.Pre-mRNA includes both exon and intron.
 Introns are nucleotide sequences in DNA and RNA that do not directly code for proteins, and are removed during the precursor messenger RNA (pre-mRNA) stage of maturation of mRNA by RNA splicing.
-1. ###Difference between Bulk RNA-seq and scRNAseq
+1. **Difference between Bulk RNA-seq and scRNAseq**
 Bulk RNA-seq:
 - Goal: Obtain average gene expression profile from a population of cells
 - Protocols: RNA is extracted from a pool of cells. RNA mixture is converted into cDNA. Sequencing is performed on the cDNA.
@@ -15,10 +16,10 @@ scRNAseq:
 - Analyses: Characterization of cell-specific gene expression profiles. Inference of cell trajectories. Exploration of gene regulatory networks. Captures cellular heterogeneity and dynamics within a population.
 - More expensive and more difficult than bulk RNA-seq
 
-2. Steps of experiments:
+2. **Steps of experiments**:
 Cell lysis -> RNA isolation -> Reverse transcription -> Reverse transcription amplification -> Sequencing -> Result analysis.
 
-3. Fundamental steps of scRNA-seq data analysis
+3. **Fundamental steps of scRNA-seq data analysis**
 Step 1: Read QC (Quality Control): Cells with low quality will not contribute to further analysis, thus need to be filtered out.
 3 parameters to consider:
 + The number of counts per barcode (count depth): how many transcripts were sequenced in a cell, a low count may indicate poor sequencing or dead cells, abnormally high count may indicate doublets
@@ -26,22 +27,22 @@ Step 1: Read QC (Quality Control): Cells with low quality will not contribute to
 + The number of mitochondrial genes per barcode(mitochondrial genomes are circular and are present in multiple copies per mitochondrion). A high mitochondrial fraction is an indicator of apoptotic cells or cells with broken membranes during sequencing (if cells are broken, cytoplasmic mRNAs get leaked out and only mitochondrial mRNAs are sequenced)
 - A rule of thumb exists: to exclude cells with less than 200 genes and more than 5% of mitochondria counts.
 - Depending on how downstream analysis performs, users can re-adjust QC parameters 
-Step 2: Alignment
-Step 3: Mapping Quality control
-Step 4: Reads Quantification
+_Step 2_: Alignment
+_Step 3:_ Mapping Quality control
+_Step 4:_ Reads Quantification
 
-5. Challenge in scRNAseq
+5. **Challenge in scRNAseq**
 - Bias amplification: Uneven cDNA amplification
 - Gene dropout: Gene dropout refers to the situation where a gene is expressed at moderate or weak levels in one cell but is absent in another cell.
 
-6. General knowledge about PCA algorithm
+6. **General knowledge about PCA algorithm**
 PCA (Principle Component Analysis) is is a dimensionality reduction and machine learning method used to simplify a large data set into a smaller set while still maintaining significant patterns and trends.
 
-Step 1: Standardization 
+_Step 1_: Standardization 
 This step is to standardize the range of continuous initial variables so that each of them contributes equally to the analysis.
 z = (value - mean)/standard deviation 
 
-Step 2: Compute the covariance matrix to identify correlations
+_Step 2_: Compute the covariance matrix to identify correlations
 The aim is to understand how the variables of the input data set are varying from the mean with respect to each other and then we can see any relationship between them.
 So, in order to identify these correlations, we compute the covariance matrix.
 
@@ -54,7 +55,7 @@ So, in order to identify these correlations, we compute the covariance matrix.
 If positive then: the two variables increase or decrease together (correlated)
 If negative then: one increases when the other decreases (Inversely correlated)
 
-Step 3: Compute the eigenvectors and eigenvalues of the covariance matrix to identify the principal components
+_Step 3:_ Compute the eigenvectors and eigenvalues of the covariance matrix to identify the principal components
 
 Eigenvectors and eigenvalues come in pairs, so that every eigenvector has an eigenvalue. 
 their number is equal to the number of dimensions of the data. For example, for a 4-dimensional data set, there are 4 variables, therefore there are 4 eigenvectors with 4 corresponding eigenvalues.
@@ -63,10 +64,10 @@ By ranking your eigenvectors in order of their eigenvalues, highest to lowest, y
 
 Example: If we rank the eigenvalues in descending order, we get λ1>λ2, which means that the eigenvector that corresponds to the first principal component (PC1) is v1 and the one that corresponds to the second principal component (PC2) is v2.
 
-Step 4: Create a feature vector to decide which principal components to keep
+_Step 4:_ Create a feature vector to decide which principal components to keep
 it’s up to you to choose whether to keep all the components or discard the ones of lesser significance, depending on what you are looking for. 
 
-Step 5: Recast the data along the principal components axes
+_Step 5:_ Recast the data along the principal components axes
 
 This can be done by multiplying the transpose of the original data set by the transpose of the feature vector.
 

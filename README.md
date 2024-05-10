@@ -44,8 +44,6 @@ z = (value - mean)/standard deviation
 Step 2: Compute the covariance matrix to identify correlations
 The aim is to understand how the variables of the input data set are varying from the mean with respect to each other and then we can see any relationship between them.
 So, in order to identify these correlations, we compute the covariance matrix.
-![alt text](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/national/Principal%2520Component%2520Analysis%2520Covariance%2520Matrix.png)
-
 
 | Variable | x | y | z |
 |---|---|---|---|
@@ -53,9 +51,25 @@ So, in order to identify these correlations, we compute the covariance matrix.
 | y | Cov(y, x) | Var(y) | Cov(y, z) |
 | z | Cov(z, x) | Cov(z, y) | Var(z) |
 
+If positive then: the two variables increase or decrease together (correlated)
+If negative then: one increases when the other decreases (Inversely correlated)
+
 Step 3: Compute the eigenvectors and eigenvalues of the covariance matrix to identify the principal components
+
+Eigenvectors and eigenvalues come in pairs, so that every eigenvector has an eigenvalue. 
+their number is equal to the number of dimensions of the data. For example, for a 4-dimensional data set, there are 4 variables, therefore there are 4 eigenvectors with 4 corresponding eigenvalues.
+
+By ranking your eigenvectors in order of their eigenvalues, highest to lowest, you get the principal components in order of significance.
+
+Example: If we rank the eigenvalues in descending order, we get λ1>λ2, which means that the eigenvector that corresponds to the first principal component (PC1) is v1 and the one that corresponds to the second principal component (PC2) is v2.
+
 Step 4: Create a feature vector to decide which principal components to keep
+it’s up to you to choose whether to keep all the components or discard the ones of lesser significance, depending on what you are looking for. 
+
 Step 5: Recast the data along the principal components axes
+
+This can be done by multiplying the transpose of the original data set by the transpose of the feature vector.
+
 Code:
 - Preprocessing and visualization.ipynb
 

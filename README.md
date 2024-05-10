@@ -3,13 +3,17 @@
 Pre-mRNA is synthesized from a DNA template in the cell nucleus by transcription.Pre-mRNA includes both exon and intron.
 Introns are nucleotide sequences in DNA and RNA that do not directly code for proteins, and are removed during the precursor messenger RNA (pre-mRNA) stage of maturation of mRNA by RNA splicing.
 1. **Difference between Bulk RNA-seq and scRNAseq**
-Bulk RNA-seq:
+
+**Bulk RNA-seq**:
+
 - Goal: Obtain average gene expression profile from a population of cells
 - Protocols: RNA is extracted from a pool of cells. RNA mixture is converted into cDNA. Sequencing is performed on the cDNA.
 - QC: Focuses on RNA extraction and library preparation steps, ensuring high-quality input material with minimal degradation or contamination.
 - Analyses: Comparisons of gene expression between conditions or time points. Identification of differentially expressed genes. Focuses on population-level changes.
 - It's easier to manipulate and analyse but ignore the variation of cells.
-scRNAseq:
+
+**scRNAseq**:
+
 - Goal: Analyze gene expression at the individual cell level to identify cell types and explore cellular heterogeneity.
 - Protocols: Individual cells are isolated using techniques such as microfluidics or droplet-based methods. Each cell's RNA is captured and converted into cDNA, followed by separate sequencing for each cell.
 - QC: Evaluation of technical aspects like the number of genes detected per cell and the number of unique molecular identifiers (UMIs) captured.
@@ -17,10 +21,12 @@ scRNAseq:
 - More expensive and more difficult than bulk RNA-seq
 
 2. **Steps of experiments**:
+
 Cell lysis -> RNA isolation -> Reverse transcription -> Reverse transcription amplification -> Sequencing -> Result analysis.
 
 3. **Fundamental steps of scRNA-seq data analysis**
-Step 1: Read QC (Quality Control): Cells with low quality will not contribute to further analysis, thus need to be filtered out.
+
+`_Step 1_`: Read QC (Quality Control): Cells with low quality will not contribute to further analysis, thus need to be filtered out.
 3 parameters to consider:
 + The number of counts per barcode (count depth): how many transcripts were sequenced in a cell, a low count may indicate poor sequencing or dead cells, abnormally high count may indicate doublets
 + The number of genes per barcode

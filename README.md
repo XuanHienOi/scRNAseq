@@ -19,11 +19,16 @@ scRNAseq:
 Cell lysis -> RNA isolation -> Reverse transcription -> Reverse transcription amplification -> Sequencing -> Result analysis.
 
 3. Fundamental steps of scRNA-seq data analysis
-Step 1: Read QC (Quality Control)
+Step 1: Read QC (Quality Control): Cells with low quality will not contribute to further analysis, thus need to be filtered out.
+3 parameters to consider:
++ The number of counts per barcode (count depth): how many transcripts were sequenced in a cell, a low count may indicate poor sequencing or dead cells, abnormally high count may indicate doublets
++ The number of genes per barcode
++ The number of mitochondrial genes per barcode(mitochondrial genomes are circular and are present in multiple copies per mitochondrion). A high mitochondrial fraction is an indicator of apoptotic cells or cells with broken membranes during sequencing (if cells are broken, cytoplasmic mRNAs get leaked out and only mitochondrial mRNAs are sequenced)
+- A rule of thumb exists: to exclude cells with less than 200 genes and more than 5% of mitochondria counts.
+- Depending on how downstream analysis performs, users can re-adjust QC parameters 
 Step 2: Alignment
 Step 3: Mapping Quality control
 Step 4: Reads Quantification
-My example below use scanpy to show basic knowledge that I understand about scRNAseq
 
 5. Challenge in scRNAseq
 - Bias amplification: Uneven cDNA amplification

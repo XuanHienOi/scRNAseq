@@ -4,7 +4,7 @@ Pre-mRNA is synthesized from a DNA template in the cell nucleus by transcription
 Introns are nucleotide sequences in DNA and RNA that do not directly code for proteins, and are removed during the precursor messenger RNA (pre-mRNA) stage of maturation of mRNA by RNA splicing.
 1. **Difference between Bulk RNA-seq and scRNAseq**
 
-**Bulk RNA-seq**:
+`Bulk RNA-seq`:
 
 - Goal: Obtain average gene expression profile from a population of cells
 - Protocols: RNA is extracted from a pool of cells. RNA mixture is converted into cDNA. Sequencing is performed on the cDNA.
@@ -12,7 +12,7 @@ Introns are nucleotide sequences in DNA and RNA that do not directly code for pr
 - Analyses: Comparisons of gene expression between conditions or time points. Identification of differentially expressed genes. Focuses on population-level changes.
 - It's easier to manipulate and analyse but ignore the variation of cells.
 
-**scRNAseq**:
+`scRNAseq`:
 
 - Goal: Analyze gene expression at the individual cell level to identify cell types and explore cellular heterogeneity.
 - Protocols: Individual cells are isolated using techniques such as microfluidics or droplet-based methods. Each cell's RNA is captured and converted into cDNA, followed by separate sequencing for each cell.

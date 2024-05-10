@@ -33,8 +33,11 @@ Cell lysis -> RNA isolation -> Reverse transcription -> Reverse transcription am
 + The number of mitochondrial genes per barcode(mitochondrial genomes are circular and are present in multiple copies per mitochondrion). A high mitochondrial fraction is an indicator of apoptotic cells or cells with broken membranes during sequencing (if cells are broken, cytoplasmic mRNAs get leaked out and only mitochondrial mRNAs are sequenced)
 - A rule of thumb exists: to exclude cells with less than 200 genes and more than 5% of mitochondria counts.
 - Depending on how downstream analysis performs, users can re-adjust QC parameters 
+
 `Step 2`: Alignment
+
 `Step 3`: Mapping Quality control
+
 `Step 4`: Reads Quantification
 
 5. **Challenge in scRNAseq**

@@ -27,12 +27,16 @@ Cell lysis -> RNA isolation -> Reverse transcription -> Reverse transcription am
 3. **Fundamental steps of scRNA-seq data analysis**
 
 `Step 1`: Read QC (Quality Control): Cells with low quality will not contribute to further analysis, thus need to be filtered out.
-3 parameters to consider:
+3 parameters to consider (see plot in code):
 + The number of counts per barcode (count depth): how many transcripts were sequenced in a cell, a low count may indicate poor sequencing or dead cells, abnormally high count may indicate doublets
 + The number of genes per barcode
 + The number of mitochondrial genes per barcode(mitochondrial genomes are circular and are present in multiple copies per mitochondrion). A high mitochondrial fraction is an indicator of apoptotic cells or cells with broken membranes during sequencing (if cells are broken, cytoplasmic mRNAs get leaked out and only mitochondrial mRNAs are sequenced)
 - A rule of thumb exists: to exclude cells with less than 200 genes and more than 5% of mitochondria counts.
 - Depending on how downstream analysis performs, users can re-adjust QC parameters 
+- In quality control (QC) analysis of single-cell RNA sequencing (scRNA-seq) data, mitochondrial, ribosome, and hemoglobin genes are often used as indicators to assess the quality and potential biases in the dataset.
+Because: Cells with higher mitochondrial gene expression may indicate stress, damage, or suboptimal cell quality. Additionally, high mitochondrial gene expression can introduce technical biases in scRNA-seq data due to mitochondrial transcripts being more abundant and contaminating the library preparation process;
+Ribosome genes are essential for protein synthesis and their expression levels can reflect the overall transcriptional activity of a cell. Monitoring ribosomal gene expression helps identify highly active cells and assess potential sources of technical noise that may arise from variations in library preparation and sequencing;
+Hemoglobin genes are mainly expressed in blood cells and can be used as indicators to identify blood contamination in scRNA-seq datasets. If a dataset contains a mixture of cell types, the presence of hemoglobin gene expression in non-blood cells suggests contamination or experimental issues related to sample preparation.
 
 `Step 2`: Alignment
 
